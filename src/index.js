@@ -21,6 +21,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {AppearanceProvider, Appearance} from 'react-native-appearance';
 import NetInfo from '@react-native-community/netinfo';
 import Config from 'react-native-config';
+import * as RNLocalize from 'react-native-localize';
 import {store, persistor} from './redux-toolkit/store';
 
 function Screen1({navigation}) {
@@ -50,18 +51,34 @@ function Screen2({navigation}) {
   );
 }
 
+const useAppLanguage = () => {
+  const appLocale = RNLocalize.getLocales();
+  const appLanguage = RNLocalize.findBestAvailableLanguage(
+    appLocale.map((item) => item.languageCode),
+  );
+  return {appLocale, appLanguage};
+};
+
 const Stack = createStackNavigator();
 
+export const AppContext = React.createContext();
+
 const App = () => {
-  const ThemeContext = React.createContext();
-  const [isDarkTheme, setIsDarkTheme] = React.useState(
-    Appearance.getColorScheme() === 'dark',
-  );
+  const {appLanguage} = useAppLanguage();
+
+  const [appConfig, setAppConfig] = React.useState({
+    isDarkTheme: Appearance.getColorScheme() === 'dark',
+    language: appLanguage.languageTag || 'en',
+  });
+
+  const handleLocalizationChange = () => {
+    setAppConfig({...appConfig, language: appLanguage.languageTag});
+  };
 
   //theme
   React.useEffect(() => {
     const subscription = Appearance.addChangeListener(({colorScheme}) => {
-      setIsDarkTheme(colorScheme === 'dark');
+      setAppConfig({...appConfig, isDarkTheme: colorScheme === 'dark'});
     });
     return () => {
       subscription.remove();
@@ -80,9 +97,20 @@ const App = () => {
     };
   }, []);
 
-  const themeContext = () => ({
+  // language
+  React.useEffect(() => {
+    RNLocalize.addEventListener('change', handleLocalizationChange);
+    return () => {
+      RNLocalize.removeEventListener('change', handleLocalizationChange);
+    };
+  }, []);
+
+  const appContext = () => ({
     toggleTheme: () => {
-      setIsDarkTheme((isDarkTheme) => !isDarkTheme);
+      setAppConfig({...appConfig, isDarkTheme: !appConfig.isDarkTheme});
+    },
+    switchLanguage: (newLanguage) => {
+      setAppConfig({...appConfig, language: newLanguage});
     },
   });
 
@@ -91,9 +119,9 @@ const App = () => {
       <SafeAreaProvider>
         <Provider store={store}>
           <PersistGate loading={<ActivityIndicator />} persistor={persistor}>
-            <ThemeContext.Provider value={themeContext}>
+            <AppContext.Provider value={appContext}>
               <NavigationContainer
-                theme={isDarkTheme ? DarkTheme : DefaultTheme}>
+                theme={appConfig.isDarkTheme ? DarkTheme : DefaultTheme}>
                 <Stack.Navigator>
                   <Stack.Screen
                     name="Screen1"
@@ -103,7 +131,7 @@ const App = () => {
                       headerTitleAlign: 'center',
                       headerRight: () => (
                         <Button
-                          onPress={() => alert('This is a button!')}
+                          onPress={() => appContext().toggleTheme()}
                           title="Info"
                           color="green"
                         />
@@ -121,7 +149,7 @@ const App = () => {
                   />
                 </Stack.Navigator>
               </NavigationContainer>
-            </ThemeContext.Provider>
+            </AppContext.Provider>
           </PersistGate>
         </Provider>
       </SafeAreaProvider>
