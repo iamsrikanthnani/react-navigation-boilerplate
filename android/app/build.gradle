@@ -1,5 +1,13 @@
 apply plugin: "com.android.application"
 
+project.ext.envConfigFiles = [
+    debug: "./.env.dev",
+    releasestaging: "./.env.staging",
+    release: "./.env.release",
+]
+
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+
 import com.android.build.OutputFile
 
 /**
@@ -134,6 +142,10 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        manifestPlaceholders = [manifestApplicationId: "${applicationId}",
+                        //APP NAME
+                        APP_NAME: project.env.get("APP_NAME")
+        ]
     }
     splits {
         abi {
@@ -145,22 +157,50 @@ android {
     }
     signingConfigs {
         debug {
-            storeFile file('debug.keystore')
-            storePassword 'android'
-            keyAlias 'androiddebugkey'
-            keyPassword 'android'
+            if (project.env.get('MYAPP_STORE_FILE')) {
+                storeFile file(project.env.get("MYAPP_STORE_FILE"))
+                storePassword project.env.get("MYAPP_STORE_PASSWORD")
+                keyAlias project.env.get("MYAPP_KEY_ALIAS")
+                keyPassword project.env.get("MYAPP_KEY_PASSWORD")
+            }
+        }
+        staging {
+            if (project.env.get('MYAPP_STORE_FILE')) {
+                storeFile file(project.env.get("MYAPP_STORE_FILE"))
+                storePassword project.env.get("MYAPP_STORE_PASSWORD")
+                keyAlias project.env.get("MYAPP_KEY_ALIAS")
+                keyPassword project.env.get("MYAPP_KEY_PASSWORD")
+            }
+        }
+        release {
+            if (project.env.get('MYAPP_STORE_FILE')) {
+                storeFile file(project.env.get("MYAPP_STORE_FILE"))
+                storePassword project.env.get("MYAPP_STORE_PASSWORD")
+                keyAlias project.env.get("MYAPP_KEY_ALIAS")
+                keyPassword project.env.get("MYAPP_KEY_PASSWORD")
+            }
         }
     }
     buildTypes {
         debug {
+            matchingFallbacks = ['debug']
+            minifyEnabled false
             signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
-            // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.debug
+            // see https://facebook.github.io/react-native/docs/signed-apk-android.
+            matchingFallbacks = ['release']
+            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+        releaseStaging {
+            matchingFallbacks = ['release','debug']
+            minifyEnabled enableProguardInReleaseBuilds
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.staging
         }
     }
 
@@ -203,6 +243,7 @@ dependencies {
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";
         debugImplementation files(hermesPath + "hermes-debug.aar")
+        releaseStagingImplementation files(hermesPath + "hermes-release.aar")
         releaseImplementation files(hermesPath + "hermes-release.aar")
     } else {
         implementation jscFlavor

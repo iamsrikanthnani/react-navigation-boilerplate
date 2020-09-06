@@ -16,6 +16,7 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* reactnavigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* reactnavigationTests.m */; };
+		34B176D62504FCDD00D0EEE3 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 34B176D52504FCDD00D0EEE3 /* Config.xcconfig */; };
 		5539892024978E2E5BAD0A74 /* libPods-reactnavigation-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B1CA3EDE579B5687A59B3DC1 /* libPods-reactnavigation-tvOSTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		CFB5A525ADB22CA22287F6D7 /* libPods-reactnavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 325A99F7C281EAAFBD1A68C7 /* libPods-reactnavigation.a */; };
@@ -53,15 +54,20 @@
 		2D02E47B1E0B4A5D006451C7 /* reactnavigation-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "reactnavigation-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* reactnavigation-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "reactnavigation-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		325A99F7C281EAAFBD1A68C7 /* libPods-reactnavigation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reactnavigation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34B176D52504FCDD00D0EEE3 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		4313B3BF37E4C464A8C85776 /* Pods-reactnavigation-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactnavigation-tvOS.release.xcconfig"; path = "Target Support Files/Pods-reactnavigation-tvOS/Pods-reactnavigation-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		4C37703ABF3E493D44E6622A /* Pods-reactnavigation-tvOS.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactnavigation-tvOS.staging.xcconfig"; path = "Target Support Files/Pods-reactnavigation-tvOS/Pods-reactnavigation-tvOS.staging.xcconfig"; sourceTree = "<group>"; };
 		519DC4A36CA60EB335C51E55 /* Pods-reactnavigation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactnavigation.release.xcconfig"; path = "Target Support Files/Pods-reactnavigation/Pods-reactnavigation.release.xcconfig"; sourceTree = "<group>"; };
 		657D7F2348A4DE792563D3D1 /* libPods-reactnavigation-reactnavigationTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reactnavigation-reactnavigationTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80CA025D299DB3F5E4FAEF09 /* libPods-reactnavigation-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reactnavigation-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = reactnavigation/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AB7A262CB4018321C5A29E86 /* Pods-reactnavigation.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactnavigation.staging.xcconfig"; path = "Target Support Files/Pods-reactnavigation/Pods-reactnavigation.staging.xcconfig"; sourceTree = "<group>"; };
 		B1CA3EDE579B5687A59B3DC1 /* libPods-reactnavigation-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reactnavigation-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6AD79CB8CBBE1A32B303DBD /* Pods-reactnavigation-reactnavigationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactnavigation-reactnavigationTests.release.xcconfig"; path = "Target Support Files/Pods-reactnavigation-reactnavigationTests/Pods-reactnavigation-reactnavigationTests.release.xcconfig"; sourceTree = "<group>"; };
+		C62236D03586B41EADBF583B /* Pods-reactnavigation-tvOSTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactnavigation-tvOSTests.staging.xcconfig"; path = "Target Support Files/Pods-reactnavigation-tvOSTests/Pods-reactnavigation-tvOSTests.staging.xcconfig"; sourceTree = "<group>"; };
 		CE1AC0388E11E23AAE31C22C /* Pods-reactnavigation-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactnavigation-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-reactnavigation-tvOS/Pods-reactnavigation-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D040EF332DAD4A64AA24F07B /* Pods-reactnavigation-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactnavigation-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-reactnavigation-tvOSTests/Pods-reactnavigation-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D2C44F92686DFEBBDBD804C7 /* Pods-reactnavigation-reactnavigationTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactnavigation-reactnavigationTests.staging.xcconfig"; path = "Target Support Files/Pods-reactnavigation-reactnavigationTests/Pods-reactnavigation-reactnavigationTests.staging.xcconfig"; sourceTree = "<group>"; };
 		D58EA127540346C8B1FDEAD0 /* Pods-reactnavigation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactnavigation.debug.xcconfig"; path = "Target Support Files/Pods-reactnavigation/Pods-reactnavigation.debug.xcconfig"; sourceTree = "<group>"; };
 		E152290165D4F13F2F8B5317 /* Pods-reactnavigation-reactnavigationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactnavigation-reactnavigationTests.debug.xcconfig"; path = "Target Support Files/Pods-reactnavigation-reactnavigationTests/Pods-reactnavigation-reactnavigationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E3A34DEDCCA9F1BF2BA37C2D /* Pods-reactnavigation-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactnavigation-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-reactnavigation-tvOSTests/Pods-reactnavigation-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,8 +153,11 @@
 				4313B3BF37E4C464A8C85776 /* Pods-reactnavigation-tvOS.release.xcconfig */,
 				D040EF332DAD4A64AA24F07B /* Pods-reactnavigation-tvOSTests.debug.xcconfig */,
 				E3A34DEDCCA9F1BF2BA37C2D /* Pods-reactnavigation-tvOSTests.release.xcconfig */,
+				AB7A262CB4018321C5A29E86 /* Pods-reactnavigation.staging.xcconfig */,
+				D2C44F92686DFEBBDBD804C7 /* Pods-reactnavigation-reactnavigationTests.staging.xcconfig */,
+				4C37703ABF3E493D44E6622A /* Pods-reactnavigation-tvOS.staging.xcconfig */,
+				C62236D03586B41EADBF583B /* Pods-reactnavigation-tvOSTests.staging.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -175,6 +184,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				34B176D52504FCDD00D0EEE3 /* Config.xcconfig */,
 				13B07FAE1A68108700A75B9A /* reactnavigation */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* reactnavigationTests */,
@@ -341,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				34B176D62504FCDD00D0EEE3 /* Config.xcconfig in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,7 +386,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export DEVELOPMENT_BUILD_CONFIGURATIONS=\"+(Debug|Debug)\"\nexport NODE_BINARY=node\n../node_modules/react-native-schemes-manager/lib/react-native-xcode.sh";
 		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -803,8 +814,171 @@
 			};
 			name = Release;
 		};
+		34B176D02504FB8900D0EEE3 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34B176D52504FCDD00D0EEE3 /* Config.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Staging;
+		};
+		34B176D12504FB8900D0EEE3 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB7A262CB4018321C5A29E86 /* Pods-reactnavigation.staging.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = reactnavigation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = reactnavigation;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Staging;
+		};
+		34B176D22504FB8900D0EEE3 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2C44F92686DFEBBDBD804C7 /* Pods-reactnavigation-reactnavigationTests.staging.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = reactnavigationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/reactnavigation.app/reactnavigation";
+			};
+			name = Staging;
+		};
+		34B176D32504FB8900D0EEE3 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C37703ABF3E493D44E6622A /* Pods-reactnavigation-tvOS.staging.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "reactnavigation-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.reactnavigation-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Staging;
+		};
+		34B176D42504FB8900D0EEE3 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C62236D03586B41EADBF583B /* Pods-reactnavigation-tvOSTests.staging.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "reactnavigation-tvOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.reactnavigation-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/reactnavigation-tvOS.app/reactnavigation-tvOS";
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Staging;
+		};
 		83CBBA201A601CBA00E9B192 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34B176D52504FCDD00D0EEE3 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -865,6 +1039,7 @@
 		};
 		83CBBA211A601CBA00E9B192 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34B176D52504FCDD00D0EEE3 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -923,6 +1098,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
+				34B176D22504FB8900D0EEE3 /* Staging */,
 				00E356F71AD99517003FC87E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -932,6 +1108,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
+				34B176D12504FB8900D0EEE3 /* Staging */,
 				13B07F951A680F5B00A75B9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -941,6 +1118,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
+				34B176D32504FB8900D0EEE3 /* Staging */,
 				2D02E4981E0B4A5E006451C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -950,6 +1128,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
+				34B176D42504FB8900D0EEE3 /* Staging */,
 				2D02E49A1E0B4A5E006451C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -959,6 +1138,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
+				34B176D02504FB8900D0EEE3 /* Staging */,
 				83CBBA211A601CBA00E9B192 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
