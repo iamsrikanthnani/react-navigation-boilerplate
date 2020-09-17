@@ -90,7 +90,15 @@ project.ext.react = [
 ]
 
 project.ext.vectoricons = [
-    iconFontNames: [ 'FontAwesome.ttf', 'Ionicons.ttf' ] // Name of the font files you want to copy
+    iconFontNames: [ 
+        'FontAwesome.ttf', 
+        'Ionicons.ttf',
+		'Quicksand-Bold.ttf',
+		'Quicksand-Light.ttf',
+		'Quicksand-Medium.ttf',
+		'Quicksand-Regular.ttf',
+		'Quicksand-SemiBold.ttf'
+    ] // Name of the font files you want to copy
 ]
 
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"

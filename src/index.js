@@ -1,13 +1,5 @@
 import * as React from 'react';
-import {
-  Text,
-  StatusBar,
-  Button,
-  StyleSheet,
-  SafeAreaView,
-  ActivityIndicator,
-  Alert,
-} from 'react-native';
+import {StatusBar, ActivityIndicator, Alert} from 'react-native';
 import 'react-native-gesture-handler';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
@@ -16,40 +8,60 @@ import {
   DefaultTheme,
   DarkTheme,
 } from '@react-navigation/native';
-import {createStackNavigator, HeaderBackButton} from '@react-navigation/stack';
+import {createStackNavigator} from '@react-navigation/stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {AppearanceProvider, Appearance} from 'react-native-appearance';
 import NetInfo from '@react-native-community/netinfo';
 import Config from 'react-native-config';
 import * as RNLocalize from 'react-native-localize';
 import {store, persistor} from './redux-toolkit/store';
+import SCREENS from './screens';
 
-function Screen1({navigation}) {
-  return (
-    <SafeAreaView style={[styles.container, {backgroundColor: '#6a51ae'}]}>
-      <StatusBar barStyle="light-content" backgroundColor="#6a51ae" />
-      <Text style={{color: '#fff'}}>Light Screen</Text>
-      <Button
-        title="Next screen"
-        onPress={() => navigation.navigate('Screen2')}
-        color="blue"
-      />
-    </SafeAreaView>
-  );
-}
+const InitStack = createStackNavigator();
+const TaskManagementStack = createStackNavigator();
+const LoveStack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
-function Screen2({navigation}) {
-  return (
-    <SafeAreaView style={[styles.container, {backgroundColor: '#ecf0f1'}]}>
-      <StatusBar barStyle="dark-content" backgroundColor="#ecf0f1" />
-      <Text>Dark Screen</Text>
-      <Button
-        title="Next screen"
-        onPress={() => navigation.navigate('Screen1')}
-      />
-    </SafeAreaView>
-  );
-}
+// init stack
+const InitStackScreen = () => (
+  <InitStack.Navigator>
+    <InitStack.Screen
+      name="OnBoarding"
+      component={SCREENS.OnBoarding}
+      options={{
+        headerShown: false,
+        headerBackTitleVisible: false,
+      }}
+    />
+    <InitStack.Screen name="Login" component={SCREENS.Login} />
+    <InitStack.Screen name="SignUp" component={SCREENS.SignUp} />
+  </InitStack.Navigator>
+);
+
+// tab stack for main tab
+const TaskManagementTab = () => (
+  <TaskManagementStack.Navigator>
+    <TaskManagementStack.Screen
+      name="TaskManagement"
+      component={SCREENS.TaskManagement}
+    />
+  </TaskManagementStack.Navigator>
+);
+
+const LoveTab = () => (
+  <LoveStack.Navigator>
+    <LoveStack.Screen name="Love" component={SCREENS.TaskManagement} />
+  </LoveStack.Navigator>
+);
+
+// main tab
+const MainTabScreen = () => (
+  <Tab.Navigator>
+    <Tab.Screen name="TaskManagement" component={TaskManagementTab} />
+    <Tab.Screen name="Love" component={LoveTab} />
+  </Tab.Navigator>
+);
 
 const useAppLanguage = () => {
   const appLocale = RNLocalize.getLocales();
@@ -58,8 +70,6 @@ const useAppLanguage = () => {
   );
   return {appLocale, appLanguage};
 };
-
-const Stack = createStackNavigator();
 
 export const AppContext = React.createContext();
 
@@ -70,6 +80,8 @@ const App = () => {
     isDarkTheme: Appearance.getColorScheme() === 'dark',
     language: appLanguage.languageTag || 'en',
   });
+
+  const {isDarkTheme} = appConfig;
 
   const handleLocalizationChange = () => {
     setAppConfig({...appConfig, language: appLanguage.languageTag});
@@ -107,12 +119,31 @@ const App = () => {
 
   const appContext = () => ({
     toggleTheme: () => {
-      setAppConfig({...appConfig, isDarkTheme: !appConfig.isDarkTheme});
+      setAppConfig({...appConfig, isDarkTheme: !isDarkTheme});
     },
     switchLanguage: (newLanguage) => {
       setAppConfig({...appConfig, language: newLanguage});
     },
   });
+
+  // custom theme
+  const CustomDefaultTheme = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      background: '#ffffff',
+      text: '#272727',
+    },
+  };
+
+  const CustomDarkTheme = {
+    ...DarkTheme,
+    colors: {
+      ...DarkTheme.colors,
+      background: '#000000',
+      text: '#ebebeb',
+    },
+  };
 
   return (
     <AppearanceProvider>
@@ -121,33 +152,16 @@ const App = () => {
           <PersistGate loading={<ActivityIndicator />} persistor={persistor}>
             <AppContext.Provider value={appContext}>
               <NavigationContainer
-                theme={appConfig.isDarkTheme ? DarkTheme : DefaultTheme}>
-                <Stack.Navigator>
-                  <Stack.Screen
-                    name="Screen1"
-                    component={Screen1}
-                    options={{
-                      headerTitle: 'hihi',
-                      headerTitleAlign: 'center',
-                      headerRight: () => (
-                        <Button
-                          onPress={() => appContext().toggleTheme()}
-                          title="Info"
-                          color="green"
-                        />
-                      ),
-                    }}
-                  />
-                  <Stack.Screen
-                    name="Screen2"
-                    component={Screen2}
-                    options={{
-                      headerLeft: (props) => (
-                        <HeaderBackButton {...props} tintColor="blue" />
-                      ),
-                    }}
-                  />
-                </Stack.Navigator>
+                theme={isDarkTheme ? CustomDarkTheme : CustomDefaultTheme}>
+                <StatusBar
+                  barStyle={isDarkTheme ? 'light-content' : 'dark-content'}
+                  backgroundColor={isDarkTheme ? '#000000' : '#ffffff'}
+                />
+                {store.getState().auth.token !== null ? (
+                  <MainTabScreen />
+                ) : (
+                  <InitStackScreen />
+                )}
               </NavigationContainer>
             </AppContext.Provider>
           </PersistGate>
@@ -156,9 +170,5 @@ const App = () => {
     </AppearanceProvider>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {flex: 1, justifyContent: 'center', alignItems: 'center'},
-});
 
 export default App;
