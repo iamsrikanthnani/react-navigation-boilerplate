@@ -1,4 +1,4 @@
-import TabStack from './TabStack';
-import InitialStack from './InitialStack';
+import TabStack from 'navigation/TabStack';
+import InitialStack from 'navigation/InitialStack';
 
 export {TabStack, InitialStack};

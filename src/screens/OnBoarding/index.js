@@ -4,7 +4,6 @@ import {
   FlatList,
   Dimensions,
   Animated,
-  Text,
   View,
   StyleSheet,
   SafeAreaView,
@@ -16,8 +15,8 @@ import {
   Directions,
   State,
 } from 'react-native-gesture-handler';
-import {RNStatusBar, RNText} from '../../components/common';
-import {OverflowItems} from '../../components/private';
+import {RNStatusBar, RNText} from 'components/common';
+import {OverflowItems} from 'components/private';
 
 const {width} = Dimensions.get('window');
 

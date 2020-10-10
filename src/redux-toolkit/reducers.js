@@ -1,6 +1,6 @@
 import {combineReducers} from '@reduxjs/toolkit';
-import configReducer from './ConfigRedux/slice';
-import authReducer from './AuthRedux/slice';
+import configReducer from 'redux-toolkit/ConfigRedux/slice';
+import authReducer from 'redux-toolkit/AuthRedux/slice';
 
 export const allReducers = combineReducers({
   config: configReducer,

@@ -2,9 +2,8 @@ import * as RNLocalize from 'react-native-localize';
 import i18n from 'i18n-js';
 import {memoize} from 'lodash';
 import {I18nManager} from 'react-native';
-
-import en from './languages/en.json';
-import vi from './languages/vi.json';
+import en from 'i18n/languages/en.json';
+import vi from 'i18n/languages/vi.json';
 
 const translationGetters = {
   en,

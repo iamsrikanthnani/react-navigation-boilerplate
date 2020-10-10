@@ -1,6 +1,6 @@
 import React from 'react';
 import {Animated, View, StyleSheet} from 'react-native';
-import {RNText} from '../../common';
+import {RNText} from 'components/common';
 
 const OVERFLOW_HEIGHT = 80;
 const SPACING = 10;

@@ -1,16 +1,29 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {KeyboardContainer, RNText, RNTextInput} from '../components/common';
+import {useFormik} from 'formik';
+import * as Yup from 'yup';
+import {KeyboardContainer, RNText, RNTextInput} from 'components/common';
+
+const loginSchema = Yup.object().shape({
+  email: Yup.string().email('Invalid email').required('Required'),
+  password: Yup.string()
+    .min(6, 'Too Short!')
+    .max(20, 'Too Long!')
+    .required('Required'),
+});
 
 const Login = ({}) => {
-  const emailRef = useRef();
-  const passwordRef = useRef();
-
-  //function
-  const onLogin = () => {
-    console.log('hihi', emailRef, emailRef.current);
-  };
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    validationSchema: loginSchema,
+    onSubmit: (values) => {
+      console.log('values', values);
+    },
+  });
 
   return (
     <KeyboardContainer style={styles.container}>
@@ -24,25 +37,32 @@ const Login = ({}) => {
       </View>
       <View style={styles.inputView}>
         <RNTextInput
-          ref={emailRef}
+          value={formik.values.email}
           placeholder="Enter your email"
           keyboardType="email-address"
+          onChangeText={formik.handleChange('email')}
           returnKeyType="next"
-          onSubmitEditing={() => passwordRef.current.focus()}
+          touched={formik.touched.email}
+          error={formik.errors.email}
         />
         <RNTextInput
-          ref={passwordRef}
+          value={formik.values.password}
           placeholder="Enter your password"
           returnKeyType="done"
           secureTextEntry
+          onChangeText={formik.handleChange('password')}
           style={styles.passwordTextInput}
+          touched={formik.touched.password}
+          error={formik.errors.password}
         />
       </View>
       <RNText font="regular" style={styles.forgotText}>
         Forgot password?
       </RNText>
-      <TouchableOpacity style={styles.loginButton} onPress={onLogin}>
-        <RNText font="regular" style={styles.loginButtonText}>
+      <TouchableOpacity
+        style={styles.loginButton}
+        onPress={formik.handleSubmit}>
+        <RNText font="medium" style={styles.loginButtonText}>
           Login
         </RNText>
       </TouchableOpacity>

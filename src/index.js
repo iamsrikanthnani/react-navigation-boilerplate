@@ -13,10 +13,10 @@ import {AppearanceProvider, Appearance} from 'react-native-appearance';
 import NetInfo from '@react-native-community/netinfo';
 import Config from 'react-native-config';
 import * as RNLocalize from 'react-native-localize';
-import {store, persistor} from './redux-toolkit/store';
-import {RNStatusBar} from './components/common';
-import {TabStack, InitialStack} from './navigation';
-import {useAppLanguage} from './i18n';
+import {store, persistor} from 'redux-toolkit/store';
+import {RNStatusBar} from 'components/common';
+import {TabStack, InitialStack} from 'navigation';
+import {useAppLanguage} from 'i18n';
 
 export const AppContext = React.createContext();
 

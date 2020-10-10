@@ -1,7 +1,8 @@
 import React, {forwardRef, useImperativeHandle} from 'react';
-import {TextInput, StyleSheet} from 'react-native';
+import {TextInput, StyleSheet, View} from 'react-native';
 import {useTheme} from '@react-navigation/native';
-import {APP_FONTS} from '../../fonts';
+import {APP_FONTS} from 'fonts';
+import {RNText} from 'components/common';
 
 const RNTextInput = forwardRef(
   (
@@ -22,6 +23,8 @@ const RNTextInput = forwardRef(
       onSubmitEditing,
       returnKeyType,
       secureTextEntry,
+      error,
+      touched,
       ...props
     },
     inputRef,
@@ -36,43 +39,64 @@ const RNTextInput = forwardRef(
       fontSize: 16,
       borderRadius: 25,
       borderWidth: StyleSheet.hairlineWidth,
-      borderColor: colors.text,
+      borderColor: touched && error ? 'red' : colors.text,
     };
 
     useImperativeHandle(inputRef, () => ({
-      getCurrentText() {
-        return 'hihi';
+      focus() {
+        return inputRef.current.focus();
+      },
+      blur() {
+        return inputRef.current.blur();
+      },
+      clear() {
+        return inputRef.current.clear();
       },
     }));
 
     return (
-      <TextInput
-        {...props}
-        ref={inputRef}
-        style={[defaultStyle, style]}
-        autoCapitalize="none"
-        autoCorrect={false}
-        blurOnSubmit
-        enablesReturnKeyAutomatically
-        {...{
-          editable,
-          clearButtonMode,
-          keyboardType,
-          maxLength,
-          onBlur,
-          onChangeText,
-          onFocus,
-          onKeyPress,
-          placeholder,
-          placeholderTextColor,
-          textAlign,
-          onSubmitEditing,
-          returnKeyType,
-          secureTextEntry,
-        }}
-      />
+      <View>
+        <TextInput
+          {...props}
+          ref={inputRef}
+          style={[defaultStyle, style]}
+          autoCapitalize="none"
+          autoCorrect={false}
+          blurOnSubmit
+          enablesReturnKeyAutomatically
+          {...{
+            editable,
+            clearButtonMode,
+            keyboardType,
+            maxLength,
+            onBlur,
+            onChangeText,
+            onFocus,
+            onKeyPress,
+            placeholder,
+            placeholderTextColor,
+            textAlign,
+            onSubmitEditing,
+            returnKeyType,
+            secureTextEntry,
+          }}
+        />
+        {touched && error && (
+          <RNText font="light" style={styles.errorText}>
+            {error}
+          </RNText>
+        )}
+      </View>
     );
   },
 );
+
+const styles = StyleSheet.create({
+  errorText: {
+    paddingTop: 8,
+    fontSize: 12,
+    paddingLeft: 20,
+  },
+});
 
 export default RNTextInput;

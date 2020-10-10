@@ -1,6 +1,6 @@
-import OnBoarding from './OnBoarding';
-import Login from './Login';
-import SignUp from './SignUp';
-import Task from './Task';
+import OnBoarding from 'screens/OnBoarding';
+import Login from 'screens/Login';
+import SignUp from 'screens/SignUp';
+import Task from 'screens/Task';
 
 export {OnBoarding, Login, SignUp, Task};

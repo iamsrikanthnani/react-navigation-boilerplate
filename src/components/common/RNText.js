@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text} from 'react-native';
 import {useTheme} from '@react-navigation/native';
-import {APP_FONTS} from '../../fonts';
+import {APP_FONTS} from 'fonts';
 
 const RNText = ({children, style, font, ...props}) => {
   const {colors} = useTheme();

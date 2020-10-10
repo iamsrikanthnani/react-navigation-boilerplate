@@ -3,8 +3,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {useTheme} from '@react-navigation/native';
 import IonIcons from 'react-native-vector-icons/Ionicons';
 import {Platform, StyleSheet} from 'react-native';
-import {OnBoarding, Login, SignUp} from '../screens';
-import {APP_FONTS} from '../fonts';
+import {OnBoarding, Login, SignUp} from 'screens';
+import {APP_FONTS} from 'fonts';
 
 const InitStack = createStackNavigator();
 

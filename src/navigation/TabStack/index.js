@@ -1,7 +1,7 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import LoveTab from './LoveTab';
-import TaskTab from './TaskTab';
+import LoveTab from 'navigation/TabStack/LoveTab';
+import TaskTab from 'navigation/TabStack/TaskTab';
 
 const BottomTab = createBottomTabNavigator();
 

@@ -1,3 +1,3 @@
-import OverflowItems from '../private/OnBoarding/OverflowItems';
+import OverflowItems from 'components/private/OnBoarding/OverflowItems';
 
 export {OverflowItems};
