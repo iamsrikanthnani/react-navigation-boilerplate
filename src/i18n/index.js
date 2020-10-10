@@ -36,7 +36,12 @@ const setI18nConfig = ({store}) => {
 
 const appTranslate = (text) => i18n.translate(text);
 
-export default {
-  setI18nConfig,
-  appTranslate,
+const useAppLanguage = () => {
+  const appLocale = RNLocalize.getLocales();
+  const appLanguage = RNLocalize.findBestAvailableLanguage(
+    appLocale.map((item) => item.languageCode),
+  );
+  return {appLocale, appLanguage};
 };
+
+export {setI18nConfig, appTranslate, useAppLanguage};

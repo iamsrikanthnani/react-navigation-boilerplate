@@ -1,5 +1,6 @@
-import OnboardingAnimated from './OnboardingAnimated';
+import RNText from './RNText';
+import RNStatusBar from './RNStatusBar';
+import KeyboardContainer from './KeyboardContainer';
+import RNTextInput from './RNTextInput';
 
-export default {
-  OnboardingAnimated,
-};
+export {RNText, RNStatusBar, KeyboardContainer, RNTextInput};

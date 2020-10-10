@@ -1,11 +1,6 @@
 import OnBoarding from './OnBoarding';
 import Login from './Login';
 import SignUp from './SignUp';
-import TaskManagement from './TaskManagement';
+import Task from './Task';
 
-export default {
-  OnBoarding,
-  Login,
-  SignUp,
-  TaskManagement,
-};
+export {OnBoarding, Login, SignUp, Task};
