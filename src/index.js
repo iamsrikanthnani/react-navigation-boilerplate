@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {ActivityIndicator, Alert} from 'react-native';
 import 'react-native-gesture-handler';
-import {Provider} from 'react-redux';
+import {Provider, useSelector} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {
   NavigationContainer,
@@ -14,7 +14,6 @@ import NetInfo from '@react-native-community/netinfo';
 import Config from 'react-native-config';
 import * as RNLocalize from 'react-native-localize';
 import {store, persistor} from 'redux-toolkit/store';
-import {RNStatusBar} from 'components/common';
 import {TabStack, InitialStack} from 'navigation';
 import {useAppLanguage} from 'i18n';
 
@@ -39,9 +38,13 @@ const DARK_THEME = {
   },
 };
 
+const MainStack = () => {
+  const {token} = useSelector((state) => state.auth);
+  return token ? <TabStack /> : <InitialStack />;
+};
+
 const App = () => {
   const {appLanguage} = useAppLanguage();
-
   const [appConfig, setAppConfig] = React.useState({
     isDarkTheme: Appearance.getColorScheme() === 'dark',
     language: appLanguage?.languageTag || 'en',
@@ -55,7 +58,7 @@ const App = () => {
     return () => {
       subscription.remove();
     };
-  }, []);
+  }, [appConfig]);
 
   // detect network
   React.useEffect(() => {
@@ -75,12 +78,12 @@ const App = () => {
     return () => {
       RNLocalize.removeEventListener('change', handleLocalizationChange);
     };
-  }, []);
+  }, [handleLocalizationChange]);
 
   // handle change language
-  const handleLocalizationChange = () => {
+  const handleLocalizationChange = React.useCallback(() => {
     setAppConfig({...appConfig, language: appLanguage.languageTag});
-  };
+  }, [appConfig, appLanguage.languageTag]);
 
   // app context
   const appContext = () => ({
@@ -102,12 +105,7 @@ const App = () => {
             <AppContext.Provider value={appContext}>
               <NavigationContainer
                 theme={isDarkTheme ? DARK_THEME : DEFAULT_THEME}>
-                <RNStatusBar />
-                {store.getState().auth.token !== null ? (
-                  <TabStack />
-                ) : (
-                  <InitialStack />
-                )}
+                <MainStack />
               </NavigationContainer>
             </AppContext.Provider>
           </PersistGate>

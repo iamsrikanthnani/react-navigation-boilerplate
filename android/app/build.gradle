@@ -156,6 +156,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
         manifestPlaceholders = [manifestApplicationId: "${applicationId}",
                         //APP NAME
                         APP_NAME: project.env.get("APP_NAME")

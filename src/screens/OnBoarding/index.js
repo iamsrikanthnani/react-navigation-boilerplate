@@ -17,6 +17,7 @@ import {
 } from 'react-native-gesture-handler';
 import {RNStatusBar, RNText} from 'components/common';
 import {OverflowItems} from 'components/private';
+import {COLORS} from 'utils';
 
 const {width} = Dimensions.get('window');
 
@@ -76,17 +77,20 @@ const OnBoarding = ({navigation}) => {
   const scrollXIndex = React.useRef(new Animated.Value(0)).current;
   const scrollXAnimated = React.useRef(new Animated.Value(0)).current;
   const [index, setIndex] = React.useState(0);
-  const setActiveIndex = React.useCallback((activeIndex) => {
-    scrollXIndex.setValue(activeIndex);
-    setIndex(activeIndex);
-  });
+  const setActiveIndex = React.useCallback(
+    (activeIndex) => {
+      scrollXIndex.setValue(activeIndex);
+      setIndex(activeIndex);
+    },
+    [scrollXIndex],
+  );
 
   React.useEffect(() => {
     if (index === data.length - VISIBLE_ITEMS - 1) {
       const newData = [...data, ...data];
       setData(newData);
     }
-  });
+  }, [data, index]);
 
   React.useEffect(() => {
     Animated.spring(scrollXAnimated, {
@@ -218,7 +222,7 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
   getStartedButton: {
-    backgroundColor: '#e21e5d',
+    backgroundColor: COLORS.primary,
     marginHorizontal: 40,
     height: 50,
     borderRadius: 25,

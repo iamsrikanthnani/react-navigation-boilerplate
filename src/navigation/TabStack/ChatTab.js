@@ -1,17 +1,17 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {Task} from 'screens';
+import {Chat} from 'screens';
 import {APP_FONTS} from 'fonts';
 
-const TaskStack = createStackNavigator();
+const ChatStack = createStackNavigator();
 
-const TaskTab = () => (
-  <TaskStack.Navigator
+const ChatTab = () => (
+  <ChatStack.Navigator
     screenOptions={{
       headerTitleStyle: {fontSize: 16, fontFamily: APP_FONTS.regular},
     }}>
-    <TaskStack.Screen name="Task" component={Task} />
-  </TaskStack.Navigator>
+    <ChatStack.Screen name="Chat" component={Chat} />
+  </ChatStack.Navigator>
 );
 
-export default TaskTab;
+export default ChatTab;

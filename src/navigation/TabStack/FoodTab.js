@@ -1,17 +1,17 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {Task} from 'screens';
+import {Food} from 'screens';
 import {APP_FONTS} from 'fonts';
 
-const TaskStack = createStackNavigator();
+const FoodStack = createStackNavigator();
 
-const TaskTab = () => (
-  <TaskStack.Navigator
+const FoodTab = () => (
+  <FoodStack.Navigator
     screenOptions={{
       headerTitleStyle: {fontSize: 16, fontFamily: APP_FONTS.regular},
     }}>
-    <TaskStack.Screen name="Task" component={Task} />
-  </TaskStack.Navigator>
+    <FoodStack.Screen name="Food" component={Food} />
+  </FoodStack.Navigator>
 );
 
-export default TaskTab;
+export default FoodTab;

@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
-import * as handler from 'redux-toolkit/ConfigRedux/handler';
+// import * as handler from 'redux-toolkit/ConfigRedux/handler';
 
 const configSlice = createSlice({
   name: 'config',

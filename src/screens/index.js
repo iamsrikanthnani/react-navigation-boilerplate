@@ -1,6 +1,10 @@
 import OnBoarding from 'screens/OnBoarding';
-import Login from 'screens/Login';
-import SignUp from 'screens/SignUp';
+import Login from 'screens/Auth/Login';
+import SignUp from 'screens/Auth/SignUp';
 import Task from 'screens/Task';
+import Food from 'screens/Food';
+import Love from 'screens/Love';
+import Profile from 'screens/Profile';
+import Chat from 'screens/Chat';
 
-export {OnBoarding, Login, SignUp, Task};
+export {OnBoarding, Login, SignUp, Task, Food, Love, Profile, Chat};

@@ -1,6 +1,5 @@
 import React from 'react';
 import {StatusBar} from 'react-native';
-import PropTypes from 'prop-types';
 
 const RNStatusBar = ({theme, ...props}) => {
   const isDarkMode = theme === 'dark';
