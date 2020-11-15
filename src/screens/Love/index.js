@@ -9,6 +9,7 @@ import {
 } from 'components/common';
 import {LoveInfo, DatingTime, TimeDistance} from 'components/private';
 import AppIcon from 'react-native-vector-icons/Ionicons';
+import ImagePicker from 'react-native-image-crop-picker';
 import {COLORS} from 'utils';
 
 const LIST_FUNCTIONS = [
@@ -53,8 +54,24 @@ const Love = ({navigation}) => {
     });
   }, [navigation]);
 
-  const onUpdateProfile = () => {};
-  const onUpdateLoverInfo = () => {};
+  const onUpdateProfile = () => {
+    ImagePicker.openPicker({
+      width: 300,
+      height: 400,
+      cropping: true,
+    }).then((image) => {
+      console.log(image);
+    });
+  };
+  const onUpdateLoverInfo = () => {
+    ImagePicker.clean()
+      .then(() => {
+        console.log('removed all tmp images from tmp directory');
+      })
+      .catch((e) => {
+        alert(e);
+      });
+  };
   const onUpdateDatingTime = () => {
     datePickerRef.current.openModal();
   };

@@ -12,6 +12,17 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const BottomTab = createBottomTabNavigator();
 
+const getTabVisibility = ({route, ignoreScreens = []}) => {
+  const currentRouteName =
+    route.state && route.state.routes[route.state.index].name;
+  if (currentRouteName) {
+    return !ignoreScreens.includes(currentRouteName);
+  }
+  return true;
+};
+
+const IGNORE_SCREENS = ['ChatContent'];
+
 const TabStack = () => {
   const {colors} = useTheme();
   return (
@@ -41,6 +52,7 @@ const TabStack = () => {
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
+        tabBarVisible: getTabVisibility({route, ignoreScreens: IGNORE_SCREENS}),
       })}
       tabBarOptions={{
         labelStyle: {

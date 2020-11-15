@@ -6,6 +6,8 @@ import Avatar from 'components/common/Avatar';
 import BottomSheet from 'components/common/BottomSheet';
 import AlertModal from 'components/common/AlertModal';
 import DatePickerModal from 'components/common/DatePicker';
+import Photo from 'components/common/Photo';
+import Press from 'components/common/Press';
 
 export {
   RNText,
@@ -16,4 +18,6 @@ export {
   BottomSheet,
   AlertModal,
   DatePickerModal,
+  Photo,
+  Press,
 };

@@ -161,6 +161,7 @@ android {
                         //APP NAME
                         APP_NAME: project.env.get("APP_NAME")
         ]
+        multiDexEnabled true
     }
     splits {
         abi {

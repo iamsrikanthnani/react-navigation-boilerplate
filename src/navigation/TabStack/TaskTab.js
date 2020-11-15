@@ -5,13 +5,15 @@ import {APP_FONTS} from 'fonts';
 
 const TaskStack = createStackNavigator();
 
-const TaskTab = () => (
-  <TaskStack.Navigator
-    screenOptions={{
-      headerTitleStyle: {fontSize: 16, fontFamily: APP_FONTS.regular},
-    }}>
-    <TaskStack.Screen name="Task" component={Task} />
-  </TaskStack.Navigator>
-);
+const TaskTab = () => {
+  return (
+    <TaskStack.Navigator
+      screenOptions={{
+        headerTitleStyle: {fontSize: 16, fontFamily: APP_FONTS.regular},
+      }}>
+      <TaskStack.Screen name="Task" component={Task} />
+    </TaskStack.Navigator>
+  );
+};
 
 export default TaskTab;

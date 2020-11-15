@@ -35,7 +35,6 @@ const Login = ({}) => {
         })
         .catch((serializedError) => {
           setSubmitting(false);
-          console.log('errr', serializedError);
         });
     },
   });
@@ -111,10 +110,10 @@ const styles = StyleSheet.create({
     marginTop: 80,
   },
   startedText: {
-    fontSize: 24,
+    fontSize: 22,
   },
   descriptionText: {
-    fontSize: 16,
+    fontSize: 14,
     paddingVertical: 10,
   },
   inputView: {
@@ -128,7 +127,7 @@ const styles = StyleSheet.create({
   },
   loginButton: {
     backgroundColor: COLORS.primary,
-    height: 50,
+    height: 48,
     borderRadius: 25,
     justifyContent: 'center',
     alignItems: 'center',
