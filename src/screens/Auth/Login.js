@@ -4,10 +4,10 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import {KeyboardContainer, RNText, RNTextInput} from 'components/common';
-import {login} from 'redux-toolkit/AuthRedux/handler';
 import {useDispatch} from 'react-redux';
 import {unwrapResult} from '@reduxjs/toolkit';
-import {COLORS} from 'utils';
+import COLORS from 'theme/colors';
+import {login} from 'redux-toolkit/Auth';
 
 const loginSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Required'),
@@ -27,15 +27,7 @@ const Login = ({}) => {
     },
     validationSchema: loginSchema,
     onSubmit: (values, {setSubmitting}) => {
-      // dispatch(login(values));
-      dispatch(login(values))
-        .then(unwrapResult)
-        .then(() => {
-          setSubmitting(false);
-        })
-        .catch((serializedError) => {
-          setSubmitting(false);
-        });
+      dispatch(login(values));
     },
   });
 
@@ -134,7 +126,7 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
   loginButtonText: {
-    color: 'white',
+    color: COLORS.white,
     fontSize: 16,
   },
   otherConnectText: {
@@ -144,7 +136,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
   facebookButton: {
-    backgroundColor: '#0183ff',
+    backgroundColor: COLORS.facebook,
     height: 50,
     borderRadius: 8,
     justifyContent: 'center',
@@ -156,10 +148,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
     textAlign: 'center',
     paddingLeft: 20,
-    color: 'white',
+    color: COLORS.white,
   },
   googleButton: {
-    backgroundColor: '#d5493c',
+    backgroundColor: COLORS.google,
     height: 50,
     borderRadius: 8,
     justifyContent: 'center',

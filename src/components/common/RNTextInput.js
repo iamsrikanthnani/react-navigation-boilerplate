@@ -1,8 +1,8 @@
 import React, {forwardRef, useImperativeHandle} from 'react';
 import {TextInput, StyleSheet, View} from 'react-native';
 import {useTheme} from '@react-navigation/native';
-import {APP_FONTS} from 'fonts';
 import {RNText} from 'components/common';
+import {FONT_FAMILY} from 'theme/fonts';
 
 const RNTextInput = forwardRef(
   (
@@ -33,7 +33,7 @@ const RNTextInput = forwardRef(
 
     const defaultStyle = {
       color: colors.text,
-      fontFamily: APP_FONTS[font] || APP_FONTS.regular,
+      fontFamily: FONT_FAMILY[font] || FONT_FAMILY.regular,
       height: 50,
       paddingHorizontal: 20,
       fontSize: 16,

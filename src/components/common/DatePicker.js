@@ -2,7 +2,7 @@ import React, {useState, forwardRef} from 'react';
 import {StyleSheet, View, TouchableOpacity} from 'react-native';
 import DatePicker from 'react-native-date-picker';
 import {BottomSheet, RNText} from 'components/common';
-import {COLORS} from 'utils';
+import COLORS from 'theme/colors';
 
 const DatePickerModal = forwardRef((props, ref) => {
   const {defaultDate, onDone, onClose, configs = {}} = props;

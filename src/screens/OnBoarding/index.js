@@ -17,7 +17,7 @@ import {
 } from 'react-native-gesture-handler';
 import {RNStatusBar, RNText} from 'components/common';
 import {OverflowItems} from 'components/private';
-import {COLORS} from 'utils';
+import COLORS from 'theme/colors';
 
 const {width} = Dimensions.get('window');
 
@@ -99,7 +99,7 @@ const OnBoarding = ({navigation}) => {
     }).start();
   });
 
-  const onMoveToLogin = () => {
+  const onMoveToLogin = async () => {
     navigation.navigate('Login');
   };
 
@@ -232,6 +232,6 @@ const styles = StyleSheet.create({
   },
   getStartedText: {
     fontSize: 16,
-    color: 'white',
+    color: COLORS.white,
   },
 });

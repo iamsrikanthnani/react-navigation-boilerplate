@@ -4,7 +4,7 @@ import {useTheme} from '@react-navigation/native';
 import IonIcons from 'react-native-vector-icons/Ionicons';
 import {Platform, StyleSheet} from 'react-native';
 import {OnBoarding, Login, SignUp} from 'screens';
-import {APP_FONTS} from 'fonts';
+import {FONT_FAMILY} from 'theme/fonts';
 
 const InitStack = createStackNavigator();
 
@@ -28,7 +28,7 @@ const InitialStack = () => {
         },
         headerBackTitleVisible: false,
         headerTitleStyle: {
-          fontFamily: APP_FONTS.semibold,
+          fontFamily: FONT_FAMILY.semibold,
         },
       }}>
       <InitStack.Screen

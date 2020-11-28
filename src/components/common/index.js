@@ -8,6 +8,8 @@ import AlertModal from 'components/common/AlertModal';
 import DatePickerModal from 'components/common/DatePicker';
 import Photo from 'components/common/Photo';
 import Press from 'components/common/Press';
+import DeckSwiper from 'components/common/DeckSwiper';
+import ScrollableTabbar from 'components/common/ScrollableTabbar';
 
 export {
   RNText,
@@ -20,4 +22,6 @@ export {
   DatePickerModal,
   Photo,
   Press,
+  DeckSwiper,
+  ScrollableTabbar,
 };

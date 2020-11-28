@@ -1,4 +1,4 @@
-const APP_FONTS = {
+export const FONT_FAMILY = {
   bold: 'Quicksand-Bold',
   light: 'Quicksand-Light',
   medium: 'Quicksand-Medium',
@@ -6,4 +6,11 @@ const APP_FONTS = {
   semibold: 'Quicksand-SemiBold',
 };
 
-export {APP_FONTS};
+export const FONT_SIZE = {};
+
+const FONTS = {
+  ...FONT_FAMILY,
+  ...FONT_SIZE,
+};
+
+export default FONTS;

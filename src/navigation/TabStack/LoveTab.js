@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Love} from 'screens';
-import {APP_FONTS} from 'fonts';
+import {FONT_FAMILY} from 'theme/fonts';
 
 const LoveStack = createStackNavigator();
 
@@ -9,7 +9,7 @@ const LoveTab = () => {
   return (
     <LoveStack.Navigator
       screenOptions={{
-        headerTitleStyle: {fontSize: 16, fontFamily: APP_FONTS.regular},
+        headerTitleStyle: {fontSize: 16, fontFamily: FONT_FAMILY.regular},
       }}>
       <LoveStack.Screen name="Love" component={Love} />
     </LoveStack.Navigator>

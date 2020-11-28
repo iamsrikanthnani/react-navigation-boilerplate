@@ -5,10 +5,10 @@ import TaskTab from 'navigation/TabStack/TaskTab';
 import ProfileTab from 'navigation/TabStack/ProfileTab';
 import ChatTab from 'navigation/TabStack/ChatTab';
 import FoodTab from 'navigation/TabStack/FoodTab';
-import {APP_FONTS} from 'fonts';
-import {COLORS} from 'utils';
 import {useTheme} from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {FONT_FAMILY} from 'theme/fonts';
+import COLORS from 'theme/colors';
 
 const BottomTab = createBottomTabNavigator();
 
@@ -56,7 +56,7 @@ const TabStack = () => {
       })}
       tabBarOptions={{
         labelStyle: {
-          fontFamily: APP_FONTS.medium,
+          fontFamily: FONT_FAMILY.medium,
           fontSize: 12,
         },
         keyboardHidesTabBar: true,

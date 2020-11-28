@@ -10,7 +10,7 @@ import {
 import {LoveInfo, DatingTime, TimeDistance} from 'components/private';
 import AppIcon from 'react-native-vector-icons/Ionicons';
 import ImagePicker from 'react-native-image-crop-picker';
-import {COLORS} from 'utils';
+import COLORS from 'theme/colors';
 
 const LIST_FUNCTIONS = [
   {id: 1, name: 'Update my profile', icon: 'ios-person-outline'},

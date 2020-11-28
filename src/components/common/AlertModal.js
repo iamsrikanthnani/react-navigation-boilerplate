@@ -1,7 +1,7 @@
 import React from 'react';
 import {Modal, View, StyleSheet, TouchableOpacity} from 'react-native';
 import {RNText} from 'components/common';
-import {COLORS} from 'utils';
+import COLORS from 'theme/colors';
 
 const AlertModal = ({
   visible,
